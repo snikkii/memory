@@ -1,0 +1,247 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    background-color: rgb(240, 255, 210);
+    padding-left: 2%;
+}
+
+
+/*design homescreen*/
+
+h1 {
+    font-size: 3.5em;
+    padding-bottom: 3%;
+    padding-top: 3%;
+    text-align: center;
+}
+
+
+/*design settings*/
+
+.questions {
+    font-size: 1.3em;
+    margin-top: 3%;
+}
+
+#playersChoice {
+    cursor: pointer;
+}
+
+.tooBig {
+    padding-top: 3%;
+}
+
+.playersName {
+    width: 15em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#numPairs {
+    width: 2.5em;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+}
+
+#info,
+#pic_title {
+    width: 50%;
+    float: left;
+}
+
+
+/*picture homescreen*/
+
+#pic1 {
+    border: 0.03em solid black;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.flipCardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flipRules:hover .flipCardInner {
+    transform: rotateX(180deg);
+}
+
+#pic_title,
+#rules {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+img#pic1:hover {
+    opacity: 0.3;
+}
+
+#rules {
+    background-color: rgb(218, 255, 145);
+    color: black;
+    transform: rotateX(180deg);
+}
+
+
+/*picture on homescreen if screen is too small*/
+
+@media only screen and (max-width: 1100px) {
+    .flipRules {
+        display: none;
+    }
+    #info {
+        text-align: center;
+        width: 100%;
+    }
+    #memoryCards {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+}
+
+#confirmBox {
+    display: none;
+    background-color: rgb(184, 214, 123);
+    border: 0.05em solid black;
+    position: fixed;
+    padding: 3%;
+    left: 40%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#boxMessage {
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+
+/*design buttons*/
+
+#okButton,
+#startButton,
+#resetButton,
+#boxButton {
+    color: black;
+    background-color: rgb(218, 255, 145);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+    border: 0.03em solid black;
+    border-radius: 30%;
+    cursor: pointer;
+}
+
+#resetButton {
+    display: none;
+}
+
+input#okButton:hover,
+input#boxButton:hover {
+    color: rgb(0, 24, 129);
+    border: 0.03em solid rgb(0, 24, 129);
+}
+
+input#startButton:hover {
+    color: rgb(3, 100, 0);
+    border: 0.03em solid rgb(3, 100, 0);
+}
+
+input#resetButton:hover {
+    color: rgb(121, 0, 0);
+    border: 0.03em solid rgb(121, 0, 0);
+}
+
+
+/*hidden elements; appear with js-code*/
+
+#hidden {
+    display: none;
+}
+
+#Timer,
+#matchTry {
+    text-align: center;
+    display: none;
+}
+
+#Timer,
+#tryCounter,
+#matchCounter {
+    font-size: 2em;
+    padding-bottom: 3%;
+}
+
+#allPlayers {
+    font-size: 1em;
+    text-align: left;
+}
+
+.nameInfo {
+    font-size: 1.4em;
+}
+
+#currentPlayer {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+
+/*design cards*/
+
+#memoryCards {
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.compare {
+    padding: 0.3%;
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+}
+
+.front {
+    border: 0.03em solid black;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+    display: none;
+}
+
+.back {
+    border: 0.03em solid black;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+img.back:hover {
+    border: 0.03em solid rgba(0, 0, 0, 0.2);
+    border-style: inset;
+    opacity: 0.8;
+}
+
+@media only screen and (max-width: 1100px) {
+    #memoryCards {
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+}
+
+
+/*card-animation*/
+
+@keyframes flipCard {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>annikas memory</title>
+    <link href="pictures/icon.png" rel="icon" type="image/x-icon">
+    <link href="annikasMemory_design.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <h1>annikas memory</h1>
+    <!--container alert-box-->
+    <div id="confirmBox">
+        <div id="boxMessage"></div>
+        <input type="button" id="boxButton">
+    </div>
+    <!--info: gamesettings-->
+    <form name="info" id="info">
+        <!--number of players-->
+        <p class="questions">How many people play?</p>
+        <div><input type="radio" name="player" value="onePlayer" id="playersChoice"><label for="player">1 player</label></div>
+        <div><input type="radio" name="player" value="twoPlayer" id="playersChoice"><label for="player">2 player</label></div>
+        <div><input type="radio" name="player" value="threePlayer" id="playersChoice"><label for="player">3 player</label></div>
+        <div><input type="radio" name="player" value="fourPlayer" id="playersChoice"><label for="player">4 player</label></div>
+
+        <div class="tooBig"><input type="button" name="ok" value="OK" id="okButton" onclick="playerNames(player)"></div>
+
+        <!--names of players-->
+        <div id="hidden">
+            <div class="questions">
+                <p>What's your name?</p>
+            </div>
+            <div id="names">
+                <!--how the namefields would look like if created with html:
+                <input type="text" name="name" value="Pippi Langstrumpf">
+                <input type="text" name="name" value="Ash Ketchum">
+                <input type="text" name="name" value="Minnie Mouse">
+                <input type="text" name="name" value="Jake Long">-->
+            </div>
+        </div>
+
+        <!--number of pairs-->
+        <p class="questions">How many pairs?</p>
+        <input type="number" name="difficulity" min="5" max="25" id="numPairs">
+
+        <div class="tooBig"><input type="button" name="start" value="start" id="startButton" onclick="startGame(player, difficulity, name)"></div>
+    </form>
+
+    <!--picture that can be flipped(if screen is big enough) to explain rules-->
+    <div class="flipRules">
+        <div class="flipCardInner">
+            <div id="pic_title">
+                <img src="pictures/titlePic.png" id="pic1">
+            </div>
+            <div id="rules">
+                <h3>rules</h3>
+                <p>The first player clicks on a card that turns around.</p>
+                <p>Then he/she has to click on another card with also turns over.</p>
+                <p>If the picture's the same there's a match and he/she can try to find another pair.</p>
+                <p>If not the cards will turn around and the next player tries to find a match.</p>
+                <p>Good luck and have fun!</p>
+            </div>
+        </div>
+    </div>
+
+    <p id="Timer"></p>
+
+    <p id="matchTry"></p>
+    <p id="currentPlayer"></p>
+
+    <!--playfield-->
+    <div id="memoryCards">
+        <!--how it would look like if created with html:
+        <div class="compare">
+            <img src="pictures/back.png" class="back">
+            <img src="pictures/apfel.png" class="front">
+        </div>-->
+    </div>
+
+    <div class="tooBig"><input type="button" name="reset" value="reset" id="resetButton" onclick="resetGame(player, difficulity, name)"></div>
+
+    <script src="annikasMemory_JavaScript.js" type=text/javascript></script>
+</body>
+
+</html>
